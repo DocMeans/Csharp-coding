@@ -1,30 +1,26 @@
 using System;
 using static System.Console;
-class AdmissionModularized // note the name change in the instructions
+class AdmissionModularized
 {
    static void Main()
    {
       double gpa;
       int testScore;
       
-      string inputString;
       WriteLine("Enter grade point average ");
-      inputString = ReadLine();
-      gpa = Convert.ToDouble(inputString);
+      gpa = Convert.ToDouble(ReadLine());
       WriteLine("Enter test score ");
-      inputString = ReadLine();
-      testScore = Convert.ToInt32(inputString);
+      testScore = Convert.ToInt32(ReadLine());
       AcceptOrReject(gpa, testScore);
-      
    }
+
     public static string AcceptOrReject(double gpa, int testScore)
    {
-    // Write your AcceptOrReject method here.
-    const double MINGPA = 3.0;
-    const int ADMIN1 = 60, ADMIN2 = 80;
-    string ruling = " ";
+       const double MIN_GPA = 3.0; // added an underscore to MINGPA to improve readability
+       const int ADMIN1 = 60, ADMIN2 = 80;
+       string ruling = " ";
 
-      if(gpa >= MINGPA)
+      if(gpa >= MIN_GPA)
       {
          if(testScore >= ADMIN1)
          {
